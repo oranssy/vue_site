@@ -1,24 +1,31 @@
-<!-- <template>
+<template>
   <section id="imgTextType" class="imgText__wrap" :class="attr">
-    <h2 class="blind">{{ subject[0].mainTitle }}</h2>
+    <h2 class="blind">이미지텍스트 타입</h2>
     <div class="imgText__inner" :class="layout">
       <div class="imgText__txt">
-        <span>{{ subject[0].subTitle }}</span>
-        <h3>{{ subject[0].mainTitle }}</h3>
-        <p>{{ subject[0].desc }}</p>
+        <span>Space Probes</span>
+        <h3>Exploration</h3>
+        <p>
+          Human space exploration helps to address fundamental questions about
+          our place in the Universe and the history of our solar system.
+        </p>
         <ul>
-          <li v-for="text in texts" v-bind:key="text">
-            <a href="/">{{ text }}</a>
+          <li>
+            <a href="/">Jan 7, 1610 CE: Galileo Discovers Jupiter’s Moons</a>
           </li>
+          <li><a href="/">Apollo 11 Astronauts on Moon</a></li>
+          <li><a href="/">Oct 4, 1957 CE: USSR Launches Sputnik</a></li>
+          <li><a href="/">Women of NASA</a></li>
+          <li><a href="/">Exploring Mars</a></li>
+          <li><a href="/">scale of the universe 2</a></li>
         </ul>
       </div>
-      <div
-        class="imgText__img"
-        v-for="img in imgs"
-        v-bind:key="img.imgName"
-        :class="img.imgName"
-      >
-        <a href="/">{{ img.desc }}</a>
+      <div class="imgText__img img1">
+        <a href="/">Star Search</a>
+      </div>
+      <div class="imgText__img img2">
+        <a href="/" class="blue">Space Gym</a>
+      </div>
     </div>
   </section>
 </template>
@@ -28,35 +35,6 @@ export default {
   props: {
     attr: String,
     layout: String,
-  },
-  data: function () {
-    return {
-      subject: [
-        {
-          mainTitle: "Exploration",
-          subTitle: "Space Probes",
-          desc: "Human space exploration helps to address fundamental questions about our place in the Universe and the history of our solar system.",
-        },
-      ],
-      texts: [
-        "Jan 7, 1610 CE: Galileo Discovers Jupiter’s Moons",
-        "Apollo 11 Astronauts on Moon",
-        "Oct 4, 1957 CE: USSR Launches Sputnik",
-        "Women of NASA",
-        "Exploring Mars",
-        "scale of the universe 2",
-      ],
-      imgs: [
-        {
-          imgName: "img1",
-          desc: "Star Search",
-        },
-        {
-          imgName: "img2",
-          desc: "Space Gym",
-        },
-      ],
-    };
   },
 };
 </script>
@@ -204,4 +182,4 @@ export default {
     bottom: 20px;
   }
 }
-</style> -->
+</style>

@@ -16,18 +16,51 @@
         :modules="modules"
         class="mySwiper"
       >
-        <swiper-slide
-          v-for="title in titles"
-          v-bind:key="title.title"
-          :class="title.title"
-        >
+        <swiper-slide>
           <div class="desc">
-            <span>{{ title.subTitle }}</span>
-            <h3>{{ title.title }}</h3>
-            <p>{{ title.desc }}</p>
+            <span>LIBRARY</span>
+            <h3>SPACE</h3>
+            <p>
+              For thousands of years, people have looked up at the night sky
+              with questions. <br />
+              As technologies have advanced so to has our ability to investigate
+              those questions.
+            </p>
             <div class="btn">
-              <a href="/">{{ title.more }}</a>
-              <a href="/" class="black">{{ title.resource }}</a>
+              <a href="/">Learn more</a>
+              <a href="/" class="black"> View resource </a>
+            </div>
+          </div></swiper-slide
+        >
+        <swiper-slide>
+          <div class="desc">
+            <span>LIBRARY</span>
+            <h3>SPACE</h3>
+            <p>
+              For thousands of years, people have looked up at the night sky
+              with questions. <br />
+              As technologies have advanced so to has our ability to investigate
+              those questions.
+            </p>
+            <div class="btn">
+              <a href="/">Learn more</a>
+              <a href="/" class="black"> View resource </a>
+            </div>
+          </div></swiper-slide
+        >
+        <swiper-slide>
+          <div class="desc">
+            <span>LIBRARY</span>
+            <h3>SPACE</h3>
+            <p>
+              For thousands of years, people have looked up at the night sky
+              with questions. <br />
+              As technologies have advanced so to has our ability to investigate
+              those questions.
+            </p>
+            <div class="btn">
+              <a href="/">Learn more</a>
+              <a href="/" class="black"> View resource </a>
             </div>
           </div></swiper-slide
         >
@@ -57,33 +90,6 @@ export default {
   setup() {
     return {
       modules: [Autoplay, Pagination, Navigation],
-    };
-  },
-  data: function () {
-    return {
-      titles: [
-        {
-          subTitle: "LIBRARY",
-          title: "SPACE",
-          desc: "For thousands of years, people have looked up at the night sky with questions. As technologies have advanced so to has our ability to investigate those questions.",
-          more: "Learn more",
-          resource: "View resource",
-        },
-        {
-          subTitle: "LIBRARY",
-          title: "Orbit",
-          desc: "Encyclopedic entry. An orbit is a regular, repeating path that one object takes around another object or center of gravity. Orbiting objects, which are called satellites, include planets, moons, asteroids, and manmade devices.",
-          more: "Learn more",
-          resource: "View resource",
-        },
-        {
-          subTitle: "LIBRARY",
-          title: "Meteor",
-          desc: "A meteor is a streak of light in the sky. A meteor, sometimes called a shooting star or falling star, is actually a space rock that is crashing through Earth's atmosphere.",
-          more: "Learn more",
-          resource: "View resource",
-        },
-      ],
     };
   },
 };

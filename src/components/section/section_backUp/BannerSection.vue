@@ -1,15 +1,15 @@
 <template>
   <section id="bannerType" class="banner__wrap" :class="fonts">
-    <h2 class="blind">{{ banners[0].title }}</h2>
+    <h2 class="blind">Black Hole</h2>
     <div class="banner__inner">
-      <h3 class="title">{{ banners[0].title }}</h3>
+      <h3 class="title">Black Hole</h3>
       <p class="desc">
-        {{ banners[0].desc }}
-        <a :href="banners[0].link1" :title="banners[0].linkTitle">{{
-          banners[0].link2
-        }}</a>
+        What is inside black hole?
+        <a href="https://youtu.be/e-P5IFTqB98" title="유튜브 페이지로 이동"
+          >https://www.youtube.com/c/inanutshell</a
+        >
       </p>
-      <span class="small">{{ banners[0].author }}</span>
+      <span class="small">Kurzgesagt - In a Nutshell</span>
     </div>
   </section>
 </template>
@@ -18,20 +18,6 @@
 export default {
   props: {
     fonts: String,
-  },
-  data: function () {
-    return {
-      banners: [
-        {
-          title: "Black Hole",
-          desc: "What is inside black hole?",
-          link1: "https://youtu.be/e-P5IFTqB98",
-          link2: "https://www.youtube.com/c/inanutshell",
-          linkTitle: "유튜브 페이지로 이동",
-          author: "Kurzgesagt - In a Nutshell",
-        },
-      ],
-    };
   },
 };
 </script>

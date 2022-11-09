@@ -1,98 +1,19 @@
 <template>
   <section id="textType" class="text__wrap" :class="attr">
-    <h2>The Solar System</h2>
-    <p>Planets</p>
+    <h2>{{ subject[0].mainTitle }}</h2>
+    <p>{{ subject[0].subTitle }}</p>
     <div class="text__inner" :class="layout">
-      <article class="text">
+      <article class="text" v-for="text in texts" v-bind:key="text.imgName">
         <figure class="text__header">
-          <img src="../../assets/img/site01_card01.jpg" alt="Sun" />
+          <img
+            :src="require(`../../assets/img/${text.imgName}`)"
+            :alt="text.imgAlt"
+          />
         </figure>
         <div class="text__box">
-          <h3 class="tit">Sun</h3>
-          <p class="desc">
-            The sun keeps the planets in its orbit with a tremendous
-            gravitational force. What would happen if it disappeared entirely?
-            Learn about the star at the center of our solar system, and how it
-            is critical to all life as we know it.
-          </p>
-          <a href="#">more</a>
-        </div>
-      </article>
-      <article class="text">
-        <figure class="text__header">
-          <img src="../../assets/img/site01_card01.jpg" alt="Mercury" />
-        </figure>
-        <div class="text__box">
-          <h3 class="tit">Mercury</h3>
-          <p class="desc">
-            The planet Mercury is named after the messenger of the Roman gods
-            because of its fleeting nature across the sky. Find out the reason
-            behind its incredible speed, if it is indeed the hottest planet in
-            the Solar System, and why the smallest planet in the solar system is
-            slowly shrinking.
-          </p>
-          <a href="#">more</a>
-        </div>
-      </article>
-      <article class="text">
-        <figure class="text__header">
-          <img src="../../assets/img/site01_card01.jpg" alt="Venus" />
-        </figure>
-        <div class="text__box">
-          <h3 class="tit">Venus</h3>
-          <p class="desc">
-            Named after the ancient Roman goddess of beauty, Venus is known for
-            its exceptional brightness. Find out about the volcanoes that dot
-            Venus's surface, the storms that rage in its atmosphere, and the
-            surprising feature that makes Venus outshine every planet or star in
-            the night sky.
-          </p>
-          <a href="#">more</a>
-        </div>
-      </article>
-      <article class="text">
-        <figure class="text__header">
-          <img src="../../assets/img/site01_card01.jpg" alt="Earth" />
-        </figure>
-        <div class="text__box">
-          <h3 class="tit">Earth</h3>
-          <p class="desc">
-            Earth is the only planet known to maintain life. Find out the
-            origins of our home planet and some of the key ingredients that help
-            make this blue speck in space a unique global ecosystem.
-          </p>
-          <a href="#">more</a>
-        </div>
-      </article>
-      <article class="text">
-        <figure class="text__header">
-          <img src="../../assets/img/site01_card01.jpg" alt="Mars" />
-        </figure>
-        <div class="text__box">
-          <h3 class="tit">Mars</h3>
-          <p class="desc">
-            Mars, the fourth planet from the sun, has been a source of intrigue
-            throughout human history. Recent NASA exploratory expeditions
-            revealed some of the planet's biggest mysteries. This video explains
-            what makes Mars so different from Earth and what would happen if
-            humans lived there.
-          </p>
-          <a href="#">more</a>
-        </div>
-      </article>
-      <article class="text">
-        <figure class="text__header">
-          <img src="../../assets/img/site01_card01.jpg" alt="Jupiter" />
-        </figure>
-        <div class="text__box">
-          <h3 class="tit">Jupiter</h3>
-          <p class="desc">
-            Jupiter is the oldest and most massive world in the solar system.
-            Learn about the planet's origin story, its Great Red Spot and
-            oceanic moons, and how this ancient world influenced the formation
-            of the solar system's other planets.
-          </p>
-          <a href="#">more</a>
+          <h3 class="tit">{{ text.title }}</h3>
+          <p class="desc">{{ text.desc }}</p>
+          <a href="#">{{ text.more }}</a>
         </div>
       </article>
     </div>
@@ -104,6 +25,60 @@ export default {
   props: {
     attr: String,
     layout: String,
+  },
+  data: function () {
+    return {
+      subject: [
+        {
+          mainTitle: "The Solar System",
+          subTitle: "Planets",
+        },
+      ],
+      texts: [
+        {
+          imgName: "site01_card01.jpg",
+          imgAlt: "Sun",
+          title: "Sun",
+          desc: "The sun keeps the planets in its orbit with a tremendous gravitational force. What would happen if it disappeared entirely? Learn about the star at the center of our solar system, and how it is critical to all life as we know it.",
+          more: "more",
+        },
+        {
+          imgName: "site01_card01.jpg",
+          imgAlt: "Mercury",
+          title: "Mercury",
+          desc: "The planet Mercury is named after the messenger of the Roman gods because of its fleeting nature across the sky. Find out the reason behind its incredible speed, if it is indeed the hottest planet in the Solar System, and why the smallest planet in the solar system is slowly shrinking.",
+          more: "more",
+        },
+        {
+          imgName: "site01_card01.jpg",
+          imgAlt: "Venus",
+          title: "Venus",
+          desc: "Named after the ancient Roman goddess of beauty, Venus is known for its exceptional brightness. Find out about the volcanoes that dot Venus's surface, the storms that rage in its atmosphere, and the surprising feature that makes Venus outshine every planet or star in the night sky.",
+          more: "more",
+        },
+        {
+          imgName: "site01_card01.jpg",
+          imgAlt: "Earth",
+          title: "Earth",
+          desc: "Earth is the only planet known to maintain life. Find out the origins of our home planet and some of the key ingredients that help make this blue speck in space a unique global ecosystem.",
+          more: "more",
+        },
+        {
+          imgName: "site01_card01.jpg",
+          imgAlt: "Mars",
+          title: "Mars",
+          desc: "Mars, the fourth planet from the sun, has been a source of intrigue throughout human history. Recent NASA exploratory expeditions revealed some of the planet's biggest mysteries. This video explains what makes Mars so different from Earth and what would happen if humans lived there.",
+          more: "more",
+        },
+        {
+          imgName: "site01_card01.jpg",
+          imgAlt: "Jupiter",
+          title: "Jupiter",
+          desc: "Jupiter is the oldest and most massive world in the solar system. Learn about the planet's origin story, its Great Red Spot and oceanic moons, and how this ancient world influenced the formation of the solar system's other planets.",
+          more: "more",
+        },
+      ],
+    };
   },
 };
 </script>

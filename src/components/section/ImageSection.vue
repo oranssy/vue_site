@@ -1,36 +1,20 @@
 <template>
   <section id="imageType" class="image__wrap" :class="attr">
-    <h2 class="blind">Observation</h2>
-    <p>What tools are used to observe space?</p>
+    <h2 class="blind">{{ subject[0].mainTitle }}</h2>
+    <p>{{ subject[0].subTitle }}</p>
     <div class="image__inner" :class="layout">
-      <article class="image img1">
-        <h3 class="tit white">Hubble Space Telescope</h3>
+      <article
+        class="image"
+        v-for="imgCard in imgCards"
+        v-bind:key="imgCard.imgName"
+      >
+        <h3 class="tit white">{{ imgCard.title }}</h3>
         <p class="desc white">
-          It was not the first space telescope, but it is one of the largest and
-          most versatile, renowned both as a vital research tool and as a public
-          relations boon for astronomy.
+          {{ imgCard.desc }}
         </p>
-        <a
-          class="btn"
-          href="https://medium.com/life-on-the-other-planets-whats-new/nasas-hubble-telescope-is-back-online-a7e3686d607a"
-          title="자세히보기"
-          >view more</a
-        >
-      </article>
-      <article class="image img2">
-        <h3 class="tit white">James Webb Space Telescope</h3>
-        <p class="desc white">
-          This is expected to enable a broad range of investigations across the
-          fields of astronomy and cosmology, such as observation of the first
-          stars and the formation of the first galaxies, and detailed
-          atmospheric characterization of potentially habitable exoplanets.
-        </p>
-        <a
-          class="btn"
-          href="https://www.quantamagazine.org/why-nasas-james-webb-space-telescope-matters-so-much-20211203/"
-          title="자세히보기"
-          >view more</a
-        >
+        <a class="btn" :href="imgCard.btnLink" :title="imgCard.btnTitle">{{
+          imgCard.btnDesc
+        }}</a>
       </article>
     </div>
   </section>
@@ -41,6 +25,36 @@ export default {
   props: {
     attr: String,
     layout: String,
+  },
+  data: function () {
+    return {
+      subject: [
+        {
+          mainTitle: "Observation",
+          subTitle: "What tools are used to observe space?",
+        },
+      ],
+      imgCard: [
+        {
+          imgName: "img1",
+          title: "Hubble Space Telescope",
+          desc: "It was not the first space telescope, but it is one of the largest and most versatile, renowned both as a vital research tool and as a public relations boon for astronomy.",
+          btnLink:
+            "https://medium.com/life-on-the-other-planets-whats-new/nasas-hubble-telescope-is-back-online-a7e3686d607a",
+          btnTitle: "자세히보기",
+          btnDesc: "view more",
+        },
+        {
+          imgName: "img2",
+          title: "James Webb Space Telescope",
+          desc: "This is expected to enable a broad range of investigations across the fields of astronomy and cosmology, such as observation of the first stars and the formation of the first galaxies, and detailed atmospheric characterization of potentially habitable exoplanets.",
+          btnLink:
+            "https://www.quantamagazine.org/why-nasas-james-webb-space-telescope-matters-so-much-20211203/",
+          btnTitle: "자세히보기",
+          btnDesc: "view more",
+        },
+      ],
+    };
   },
 };
 </script>
