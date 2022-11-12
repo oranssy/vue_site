@@ -1,19 +1,28 @@
-# vueclass
+# vueclass           
 
-### CLI 설치하기
+### ┌  CLI 설치하기  ┐        
 
-npm install -g @vue/cli
+npm install -g @vue/cli              
 
-### VUE 설치하기
+### ┌  VUE 설치하기  ┐        
 
-vue create vueclass
+vue create vueclass               
 
-### 파이어베이스 설치
+### ┌  파이어베이스 설치  ┐        
 
-npm install -g firebase-tools
+npm install -g firebase-tools                
 
-### 배포하기
+### ┌  배포하기  ┐        
 
-### 1차 완성 : 컴포넌트 사용, props 사용, swiper 사용
+### ┌  1차 완성 : 컴포넌트 사용, props 사용, swiper 사용  ┐        
 
-https://vueclass12345.web.app/
+https://vueclass12345.web.app/            
+
+
+
+### ┌    ┐        
+http://           
+
+
+### ┌    ┐        
+http://           
