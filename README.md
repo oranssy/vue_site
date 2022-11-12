@@ -1,4 +1,4 @@
-# vueclass           
+# vue_site           
 
 ### ┌  CLI 설치하기  ┐        
 
